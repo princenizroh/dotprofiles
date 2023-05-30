@@ -14,6 +14,7 @@ return packer.startup(function(use)
 		requires = { 'tjdevries/colorbuddy.nvim' }
 	}
   use 'kyazdani42/nvim-web-devicons' -- File icons
+  use 'glepnir/lspsaga.nvim' -- LSP UIs
   use 'L3MON4D3/LuaSnip' -- Snippet
   use 'hoob3rt/lualine.nvim' -- Statusline
   use 'onsails/lspkind-nvim' -- vscode-like pictograms
@@ -25,9 +26,13 @@ return packer.startup(function(use)
     'nvim-treesitter/nvim-treesitter',
     run = ':TSUpdate',    
   }
-  use 'windwp/nvim-autopairs'
-  use 'windwp/nvim-ts-autotag'
-  use 'nvim-lua/plenary.nvim' --Common utilities
-  use 'nvim-telescope/telescope.nvim'
+  use 'windwp/nvim-autopairs' -- auto pair
+  use 'windwp/nvim-ts-autotag' -- auto tagging
+  
+  use 'nvim-lua/plenary.nvim' -- Common utilities
+  use 'nvim-telescope/telescope.nvim' -- telescope
   use 'nvim-telescope/telescope-file-browser.nvim'
+  
+  use 'akinsho/nvim-bufferline.lua' -- tab
+  use 'norcalli/nvim-colorizer.lua' -- Color #
 end)
