@@ -15,21 +15,17 @@ local highlights = myRequire("highligts")
 local maps = myRequire("maps")
 local plugins = myRequire("plugins")
 
---local has = function(x)
---	return vim.fn.has(x) == 1
---end
+local has = vim.fn.has
 
---local is_mac = has "macunix"
---local is_win = has "win64"
+local is_win = has "win32"
+local is_wsl = has "wsl"
 
---if is_win then
---	loadfile(vim.fn.expand('~/.config/nvim/lua/windows.lua'))()
---end
-
---if is_mac then
---loadfile(vim.fn.expand('~/.config/nvim/lua/macos.lua'))()
---end
-
+if is_win == 1 then
+  require('windows')
+end
+if is_wsl == 1 then
+  require('wsl')
+end
 --vim.fn.setreg('*', 'Hello, clipboard!')
 --setclipboard=unnamedplus
 --vim.opt.clipboard:append("unnamedplus")
