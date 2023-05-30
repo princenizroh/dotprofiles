@@ -29,3 +29,4 @@ end
 --vim.fn.setreg('*', 'Hello, clipboard!')
 --setclipboard=unnamedplus
 --vim.opt.clipboard:append("unnamedplus")
+
