@@ -26,7 +26,7 @@ export PATH="/usr/lib/jvm/jdk-17/bin:$PATH"
 export PATH="/opt/javafx-sdk-17.0.7/lib:$PATH"
 export PATH="/usr/local/bin:$PATH"
 export PATH="$HOME/.local/share/nvim:$PATH"
-
+export PATH="/path/to/tree-sitter-cli:$PATH"
 # Keep 1000 lines of history within the shell and save it to ~/.zsh_history:
 HISTSIZE=1000
 SAVEHIST=1000
