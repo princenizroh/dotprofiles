@@ -36,7 +36,7 @@ lspkind.init({
       Color = "󰏘",
       File = "󰈙",
       Reference = "󰈇",
-      Folder = "󰉋",    EnumMember = "",
+      Folder = "󰉋",
       EnumMember = "",
       Constant = "󰏿",
       Struct = "󰙅",

@@ -26,7 +26,3 @@ end
 if is_wsl == 1 then
   require('wsl')
 end
---vim.fn.setreg('*', 'Hello, clipboard!')
---setclipboard=unnamedplus
---vim.opt.clipboard:append("unnamedplus")
-
