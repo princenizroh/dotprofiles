@@ -22,8 +22,8 @@ bindkey '^[[Z' undo				# shift + tab undo last action
 
 #Path Configure
 export PATH=$PATH:/opt/gradle-8.1.1/bin
-export PATH="/usr/lib/jvm/jdk-17/bin:$PATH"
-export PATH="/opt/javafx-sdk-17.0.7/lib:$PATH"
+export PATH="/usr/lib/jvm/jdk-19/bin:$PATH"
+export PATH="/opt/javafx-sdk-20.0.1/lib:$PATH"
 export PATH="/usr/local/bin:$PATH"
 export PATH="$HOME/.local/share/nvim:$PATH"
 export PATH="/path/to/tree-sitter-cli:$PATH"
