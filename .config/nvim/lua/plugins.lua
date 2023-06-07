@@ -8,6 +8,8 @@ end
 vim.cmd [[packadd packer.nvim]]
 
 return packer.startup(function(use)
+
+  -- themes
 	use 'wbthomason/packer.nvim'
 	use {
 		'svrana/neosolarized.nvim',
@@ -21,19 +23,25 @@ return packer.startup(function(use)
   use 'hrsh7th/cmp-buffer' -- nvim-cmp source for build
   use 'hrsh7th/cmp-nvim-lsp' -- nvim-cmp spurce for neovim's built-in LSP
   use 'hrsh7th/nvim-cmp' -- Completion
+
+  -- LSP
   use 'neovim/nvim-lspconfig' -- LSP
-  use {
-    'nvim-treesitter/nvim-treesitter',
-    run = ':TSUpdate',    
-  }
   use 'jose-elias-alvarez/null-ls.nvim' -- Use Neovim as a language server to inject LSP diagnostics, code actions, and more via Lua
   use 'MunifTanjim/prettier.nvim' -- Prettier plugin for Neovim's built-in LSP client
   use 'williamboman/mason.nvim'
   use 'williamboman/mason-lspconfig.nvim'
+  use 'mfussenegger/nvim-jdtls'
+
+  -- Tree
+  use {
+    'nvim-treesitter/nvim-treesitter',
+    run = ':TSUpdate',    
+  }
 
   use 'windwp/nvim-autopairs' -- auto pair
   use 'windwp/nvim-ts-autotag' -- auto tagging
   
+  -- telescope
   use 'nvim-lua/plenary.nvim' -- Common utilities
   use 'nvim-telescope/telescope.nvim' -- telescope
   use 'nvim-telescope/telescope-file-browser.nvim'
