@@ -137,7 +137,7 @@ local config = {
 }
 
 config['on_attach'] = function(client, bufnr)
-  require'keymaps'.map_java_keys(bufnr);
+  require'maps'.map_java_keys(bufnr);
   require "lsp_signature".on_attach({
     bind = true, -- This is mandatory, otherwise border config won't get registered.
     floating_window_above_cur_line = false,
