@@ -1,4 +1,13 @@
 -- Location jdtls 
+local jdtls_ok, jdtls = pcall(require, "jdtls")
+if not jdtls_ok then
+  vim.notify "JDTLS not found, install with `:LspInstall jdtls`"
+  return
+end
+
+-- Installation location of jdtls by nvim-lsp-installer
+local JDTLS_LOCATION = vim.fn.stdpath "data" .. "/lsp_servers/jdtls"
+
 local jdtls_dir = vim.fn.expand('~/.local/share/nvim/mason/packages/jdtls')
 local config_dir = jdtls_dir .. '/config_win'
 local plugins_dir = jdtls_dir .. '/plugins/'
@@ -15,10 +24,13 @@ end
 local HOME = os.getenv "HOME"
 local WORKSPACE_PATH = HOME .. "/Coding/Java/"
 
-local System = "linux"
+local SYSTEM = "linux"
 
 local project_name = vim.fn.fnamemodify(vim.fn.getcwd(), ':p:h:t')
 local workspace_dir = WORKSPACE_PATH .. project_name
+
+local extendedClientCapabilities = jdtls.extendedClientCapabilities
+extendedClientCapabilities.resolveAdditionalTextEditsSupport = true
 
 -- Main Config
 local config = {
@@ -40,9 +52,8 @@ local config = {
     '-configuration', path_to_lsp_server,
     '-data', workspace_dir,
   },
-
-  -- This is the default if not provided, you can remove it. Or adjust as needed.
-  -- One dedicated LSP server & client will be started per unique root_dir
+  
+  
   root_dir = root_dir,
 
   -- Here you can configure eclipse.jdt.ls specific settings
@@ -136,18 +147,10 @@ local config = {
   },
 }
 
-config['on_attach'] = function(client, bufnr)
-  require'maps'.map_java_keys(bufnr);
-  require "lsp_signature".on_attach({
-    bind = true, -- This is mandatory, otherwise border config won't get registered.
-    floating_window_above_cur_line = false,
-    padding = '',
-    handler_opts = {
-      border = "rounded"
-    }
-  }, bufnr)
-end
-
 -- This starts a new client & server,
 -- or attaches to an existing client & server depending on the `root_dir`.
+--jdtls.start_or_attach(config)
+-- Add the commands
 require('jdtls.setup').add_commands()
+vim.bo.shiftwidth = 2
+vim.bo.tabstop = 2
