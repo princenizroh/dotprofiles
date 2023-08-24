@@ -1,0 +1,22 @@
+{
+  "coc.source.OmniSharp.enable": true,
+  "coc.source.OmniSharp.triggerCharacters": ".",
+
+  "omnisharp.version": "v1.39.8",
+  "omnisharp.trace.server": "information",
+  "omnisharp.debug.server": true,
+
+  "languageserver": {
+    "go": {
+      "command": "gopls",
+      "rootPatterns": ["go.mod"],
+      "trace.server": "verbose",
+      "filetypes": ["go"]
+    },
+    "csharp-ls": {
+      "command": "csharp-ls",
+      "filetypes": ["cs"],
+      "rootPatterns": [".vim/", ".git/", ".hg/"]
+    }
+  }
+}
